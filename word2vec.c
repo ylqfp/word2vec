@@ -34,6 +34,8 @@ struct vocab_word {
   char *word, *code, codelen;
 };
 
+const int mydebug = 1;
+
 char train_file[MAX_STRING], output_file[MAX_STRING];
 char save_vocab_file[MAX_STRING], read_vocab_file[MAX_STRING];
 struct vocab_word *vocab;
@@ -268,6 +270,11 @@ void CreateBinaryTree() {
       vocab[a].code[i - b - 1] = code[b];
       vocab[a].point[i - b] = point[b] - vocab_size;
     }
+  }
+  for(a=0; a< vocab_size; a++)
+  {
+    vocab_word w = vocab[a];
+    printf("count=%lld, point=%d, word=%s, code=%s, codelen=%d\n", w.cn, w->point, w->word, w->code, w->codelen);
   }
   free(count);
   free(binary);
