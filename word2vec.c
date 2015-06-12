@@ -273,7 +273,7 @@ void CreateBinaryTree() {
   }
   for(a=0; a< vocab_size; a++)
   {
-    vocab_word w = vocab[a];
+    struct vocab_word w = vocab[a];
     printf("count=%lld, point=%d, word=%s, code=%s, codelen=%d\n", w.cn, w->point, w->word, w->code, w.codelen);
   }
   free(count);
